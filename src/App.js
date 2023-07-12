@@ -2,13 +2,13 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+import Navigation from './components/Navigation';
+import Notfound from './components/NotFound/Notfound';
+import AuthProvider from './contexts/AuthContext';
 import Login from './components/Auth/Login';
+import ProtectedRoute from './components/ProtectedRoute';
 import Categories from './components/Categories/Categories';
 import Todos from './components/Todos/Todos';
-import Notfound from './components/NotFound/Notfound';
-import Navigation from './components/Navigation';
-import AuthProvider from './contexts/AuthContext';
-import ProtectedRoute from './components/ProtectedRoute';
 
 export default function App() {
     return (
@@ -17,17 +17,17 @@ export default function App() {
                 <Router>
                     <Navigation />
                     <Routes>
-                        <Route to='/categories' element={<Categories />} />
+                        <Route path='/categories' element={<Categories />} />
                         <Route
-                            to='/todos'
+                            path='/todos'
                             element={
-                                <ProtectedRoute>
+                                // <ProtectedRoute>
                                     <Todos />
-                                </ProtectedRoute>
+                                // </ProtectedRoute>
                             }
                         />
-                        <Route to='/login' element={<Login />} />
-                        <Route to='*' element={<Notfound />} />
+                        <Route path='/login' element={<Login />} />
+                        <Route path='*' element={<Notfound />} />
                     </Routes>
                 </Router>
             </AuthProvider>

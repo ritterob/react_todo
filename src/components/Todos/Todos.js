@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function Todos() {
   return (
-    <div>Todos</div>
+    <div><h1>Todos</h1></div>
   )
 }

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { auth } from '../base';
 import { GithubAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
 
-const AuthContext = React.createContext;
+const AuthContext = React.createContext();
 
 export function useAuth() {
     return useContext(AuthContext);
