@@ -14,20 +14,23 @@ export default function Navigation() {
     }
 
     return (
-        <Navbar className='bg-primary px-3' data-bs-theme='dark'>
+        <Navbar expand='md' className='bg-primary px-3' data-bs-theme='dark'>
             <Navbar.Brand href='/'>ToDos</Navbar.Brand>
             <Navbar.Toggle />
             <Navbar.Collapse className='justify-content-end'>
                 <Nav>
+                    <Link to='/' className='nav-link mt-1'>
+                        Home
+                    </Link>
                     <Link to='/todos' className='nav-link mt-1'>
                         ToDos
                     </Link>
                     <Link to='/categories' className='nav-link mt-1'>
-                        Categories
+                        Categories&ensp;
                     </Link>
                     {currentUser ? (
-                        <a href='/login' className='btn' onClick={() => handleLogout()}>
-                            Logout{' '}
+                        <a href='/' className='btn text-start px-0' onClick={() => handleLogout()}>
+                            Logout&ensp;
                             {!currentUser.displayName
                                 ? currentUser.email.split('@')[0]
                                 : currentUser.displayName.split(' ')[0]}

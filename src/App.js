@@ -9,6 +9,8 @@ import Login from './components/Auth/Login';
 import ProtectedRoute from './components/ProtectedRoute';
 import Categories from './components/Categories/Categories';
 import Todos from './components/Todos/Todos';
+import Footer from './components/Footer';
+import Home from './components/Home';
 
 export default function App() {
     return (
@@ -17,6 +19,7 @@ export default function App() {
                 <Router>
                     <Navigation />
                     <Routes>
+                        <Route path='/' element={<Home />} />
                         <Route
                             path='/todos'
                             element={
@@ -38,6 +41,7 @@ export default function App() {
                     </Routes>
                 </Router>
             </AuthProvider>
+            <Footer />
         </div>
     );
 }
