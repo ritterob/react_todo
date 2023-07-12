@@ -9,7 +9,7 @@ export default function Login() {
 
     async function handleAuth() {
         await login();
-        return navigate('/');
+        return navigate('/todos');
     }
 
     return (

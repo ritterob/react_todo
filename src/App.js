@@ -17,13 +17,20 @@ export default function App() {
                 <Router>
                     <Navigation />
                     <Routes>
-                        <Route path='/categories' element={<Categories />} />
                         <Route
                             path='/todos'
                             element={
-                                // <ProtectedRoute>
+                                <ProtectedRoute>
                                     <Todos />
-                                // </ProtectedRoute>
+                                </ProtectedRoute>
+                            }
+                        />
+                        <Route
+                            path='/categories'
+                            element={
+                                <ProtectedRoute>
+                                    <Categories />
+                                </ProtectedRoute>
                             }
                         />
                         <Route path='/login' element={<Login />} />
