@@ -1,38 +1,42 @@
 .App {
-  text-align: center;
+    min-height: 100vh;
+    margin-bottom: 0 !important;
+    position: relative;
+    background-image: url('images/blueribbon.jpg');
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.page-title {
+  padding: 1rem;
+  font-variant: small-caps;
+  font-weight: 800;
+  color: var(--bs-light);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.info-text {
+  color: black;
+  background-color: var(--bs-light);
+  opacity: 0.7;
+  padding: 0.8em 1em;
+  font-size: 1.1em;
+  border: 4px solid var(--bs-info);
+  border-radius: 10px;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
 }
 
-.App-link {
-  color: #61dafb;
+img#profile {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 10px;
+    border: 2px solid var(--bs-success);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.table {
+  opacity: 0.8;
 }

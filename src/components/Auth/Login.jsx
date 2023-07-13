@@ -3,7 +3,7 @@ import { useAuth } from '../../contexts/AuthContext';
 import { Container, Card } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
-export default function Login() {
+export default function Login(props) {
     const { login } = useAuth();
     const navigate = useNavigate();
 
@@ -14,14 +14,14 @@ export default function Login() {
 
     return (
         <div className='login'>
-            <article className='bg-info mb-5 p-5 text-dark'>
+            <article className='opacity-75 mb-5 p-5 text-dark'>
                 <Container>
                     <Card className='m-2 border-dark text-center'>
-                        <Card.Header className='bg-dark text-white'>
+                        <Card.Header className='bg-dark text-light'>
                             <h2>Login for full functionality</h2>
                         </Card.Header>
                         <Card.Body>
-                            <button className='btn btn success' onClick={() => handleAuth()}>
+                            <button className='btn btn-success' onClick={() => handleAuth()}>
                                 Login with Github
                             </button>
                         </Card.Body>
