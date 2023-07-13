@@ -36,3 +36,7 @@ img#profile {
     margin: 0 10px;
     border: 2px solid var(--bs-success);
 }
+
+.table {
+  opacity: 0.8;
+}
