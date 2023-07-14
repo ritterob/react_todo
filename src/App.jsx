@@ -22,6 +22,7 @@ export default function App() {
                         <Route path='/' element={<Home />} />
                         <Route
                             path='/todos'
+                            name='/todos'
                             element={
                                 <ProtectedRoute>
                                     <Todos />
@@ -30,13 +31,14 @@ export default function App() {
                         />
                         <Route
                             path='/categories'
+                            name='/categories'
                             element={
                                 <ProtectedRoute>
                                     <Categories />
                                 </ProtectedRoute>
                             }
                         />
-                        <Route path='/login' element={<Login />} />
+                        <Route path='/login' name='/' element={<Login />} />
                         <Route path='*' element={<Notfound />} />
                     </Routes>
                 </Router>
