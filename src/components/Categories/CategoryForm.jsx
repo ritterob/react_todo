@@ -9,7 +9,7 @@ export default function CategoryForm(props) {
         if (!props.category) {
             //  No category, so we'll create one.
             const categoryToCreate = values;
-            axios.post(`https://localhost:7039/api/Categories`, categoryToCreate).then(() => {
+            axios.post(`http://todoapi.ritterhaus.net/api/Categories`, categoryToCreate).then(() => {
                 props.setShowCreate(false);
                 props.getCategories();
             });
@@ -21,7 +21,7 @@ export default function CategoryForm(props) {
                 catDesc: values.catDesc,
             };
 
-            axios.put(`https://localhost:7039/api/Categories/${props.category.categoryId}`, categoryToEdit).then(() => {
+            axios.put(`http://todoapi.ritterhaus.net/api/Categories/${props.category.categoryId}`, categoryToEdit).then(() => {
                 props.setShowEdit(false);
                 props.getCategories();
             });

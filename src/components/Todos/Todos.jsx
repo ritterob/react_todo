@@ -13,7 +13,7 @@ export default function Todos() {
     const [filter, setFilter] = useState(0);
 
     const getToDos = () => {
-        axios.get(`https://localhost:7039/api/ToDos`).then((response) => {
+        axios.get(`http://todoapi.ritterhaus.net/api/ToDos`).then((response) => {
             console.log(response);
             setTodos(response.data);
         });

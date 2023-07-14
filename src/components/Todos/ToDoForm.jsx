@@ -7,7 +7,7 @@ export default function ToDoForm(props) {
     const [Categories, setCategories] = useState([]);
 
     const getCategories = () => {
-        axios.get(`https://localhost:7039/api/Categories`).then((response) => {
+        axios.get(`http://todoapi.ritterhaus.net/api/Categories`).then((response) => {
             console.log(response);
             setCategories(response.data);
         });
@@ -18,7 +18,7 @@ export default function ToDoForm(props) {
         if (!props.todo) {
             //  If there is no todo, create one.
             const todoToCreate = values;
-            axios.post(`https://localhost:7039/api/ToDos`, todoToCreate).then((response) => {
+            axios.post(`http://todoapi.ritterhaus.net/api/ToDos`, todoToCreate).then((response) => {
                 props.setShowCreate(false);
                 props.getToDos();
             });
@@ -30,7 +30,7 @@ export default function ToDoForm(props) {
                 dons: values.done,
                 categoryId: values.categoryId,
             };
-            axios.put(`https://localhost:7039/api/ToDos/${props.todo.toDoId}`, todoToEdit).then((response) => {
+            axios.put(`http://todoapi.ritterhaus.net/api/ToDos/${props.todo.toDoId}`, todoToEdit).then((response) => {
                 props.getToDos();
                 props.setShowEdit(false);
             });

@@ -6,11 +6,11 @@ export default function Filter(props) {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        axios.get(`https://localhost:7039/api/ToDos`).then((response) => {
+        axios.get(`http://todoapi.ritterhaus.net/api/ToDos`).then((response) => {
             console.log(response);
             setTodos(response.data);
         });
-        axios.get(`https://localhost:7039/api/Categories`).then((response) => {
+        axios.get(`http://todoapi.ritterhaus.net/api/Categories`).then((response) => {
             console.log(response);
             setCategories(response.data);
         });
