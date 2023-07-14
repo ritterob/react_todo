@@ -3,7 +3,7 @@ import { useAuth } from '../../contexts/AuthContext';
 import { Container, Card } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
-export default function Login(props) {
+export default function Login() {
     const { login } = useAuth();
     const navigate = useNavigate();
 
