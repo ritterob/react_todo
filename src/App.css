@@ -40,3 +40,35 @@ img#profile {
 .table {
   opacity: 0.8;
 }
+
+input.form-control {
+  color-scheme: dark;
+}
+
+input.form-control::placeholder, textarea.form-control::placeholder {
+  color: var(--bs-dark);
+  opacity: 70%;
+}
+
+button#editLink, button#deleteLink {
+  margin: 0 0.2em;
+  font-size: 1.2em;
+  background: none;
+  outline: none;
+  border: none;
+  color: white;
+  box-shadow: 1px 1px 5px black;
+  opacity: 50%;
+}
+
+button#editLink:hover, button#deleteLink:hover {
+  opacity: 100%;
+}
+
+button#editLink {
+  background-color: var(--bs-warning);
+}
+
+button#deleteLink {
+  background-color: var(--bs-danger);
+}

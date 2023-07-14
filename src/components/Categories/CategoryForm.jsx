@@ -49,7 +49,7 @@ export default function CategoryForm(props) {
                             name='catDesc'
                             as='textarea'
                             className='form-control'
-                            placeholder='Name'
+                            placeholder='Description'
                             style={{
                                 resize: 'none',
                                 height: '5em',
