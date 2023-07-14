@@ -67,9 +67,9 @@ export default function ToDoForm(props) {
                             ))}
                         </Field>
                     </div>
-                    <div className="form-group m-3">
-                        <button className="btn btn-info m3" type='submit'>
-                            Add To List
+                    <div className='form-group m-3'>
+                        <button className='btn btn-info m3' type='submit'>
+                            {!props.todo ? <span>Add To List</span> : <span>Save Changes</span>}
                         </button>
                     </div>
                 </Form>

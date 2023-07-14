@@ -32,7 +32,7 @@ export default function Todos() {
                     <button className='btn btn-info my-2' onClick={() => setShowCreate(!showCreate)}>
                         {!showCreate ? 'Add a Task' : 'Cancel'}
                     </button>
-                    <div className="row">
+                    <div className='row'>
                         <div className='createContainer col-md-6 offset-3'>
                             {showCreate && <ToDoCreate getToDos={getToDos} setShowCreate={setShowCreate} />}
                         </div>
@@ -48,18 +48,23 @@ export default function Todos() {
                             <th>Name</th>
                             <th>Category</th>
                             <th>Completed</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
-                        {filter === 0 && todos.map((t) => <SingleTodo key={t.toDoId} todo={t} />)}
+                        {filter === 0 && todos.map((t) => <SingleTodo key={t.toDoId} todo={t} getToDos={getToDos} />)}
                         {filter > 0 &&
                             todos
                                 .filter((t) => t.category.categoryId === filter)
-                                .map((t) => <SingleTodo key={t.toDoId} todo={t} />)}
+                                .map((t) => <SingleTodo key={t.toDoId} todo={t} getToDos={getToDos} />)}
                         {filter === -1 &&
-                            todos.filter((t) => t.done === true).map((t) => <SingleTodo key={t.toDoId} todo={t} />)}
+                            todos
+                                .filter((t) => t.done === true)
+                                .map((t) => <SingleTodo key={t.toDoId} todo={t} getToDos={getToDos} />)}
                         {filter === -2 &&
-                            todos.filter((t) => t.done === false).map((t) => <SingleTodo key={t.toDoId} todo={t} />)}
+                            todos
+                                .filter((t) => t.done === false)
+                                .map((t) => <SingleTodo key={t.toDoId} todo={t} getToDos={getToDos} />)}
                     </tbody>
                 </table>
             </Container>
